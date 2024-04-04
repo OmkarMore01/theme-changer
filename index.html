@@ -11,18 +11,26 @@
             width: 80%;
             margin: 100px auto;
             border-radius: 10px;
+            color: cyan;
         }
 
         .title {
-            color: blue;
+            color: #ff3300;
             text-align: center;
             padding-top: 15px;
         }
-
+        .title1{
+            color: white;
+            text-align: center;
+            padding-top: 15px;
+        }
         .description {
             font-size: 25px;
             padding: 0 20px;
             padding-bottom: 20px;
+        }
+        span{
+            padding-left: 50px;
         }
 
         .theme-icon {
@@ -37,6 +45,7 @@
 
         .active {
             border: 1px solid #000;
+            background: none;
         }
 
         .theme-dark {
@@ -59,13 +68,16 @@
 </head>
 <body id="body">
     <div class="container-light" id="container">
-        <h1 class="title">Dark / Light Mode</h1>
-        <img src="./png/dark.png" class="theme-icon" id="dark" onclick="dark()" />
-        <img src="./png/light.png" class="theme-icon active" id="light" onclick="light()" />
+        <h1 class="title" id="title">Light Theme /Dark Theme </h1>
+        <img src="./images/dark.png" class="theme-icon" id="dark" onclick="dark()" />
+        <img src="./images/light.png" class="theme-icon active" id="light" onclick="light()" />
 
-        <P class="description">In terms of web design, a light-on-dark color scheme (also called black mode, dark mode,
-            dark theme, or night mode) is a color scheme that uses light-colored text, icons, and UI elements on a dark
-            background. The opposite color scheme is called dark-on-light color scheme, light mode, or light theme.</P>
+        <P class="description">Light Mode:-<br><span>
+            Contrast polarity is a term used to describe the contrast between text and background. Positive contrast polarity is a definition that refers to text with a dark font on a light background (Light Mode).
+            For people with normal vision, from a physiological point of view, the content of any text is better perceived in Light Mode.</span>
+            <br><br><br>Dark Mode:-<br><span>
+            Dark interface modes are designed to display less light than Light Mode displays and extend the battery life or serve as an eye vision relief for tired eyes. The amount of light in the environment affects the energy consumption or physical state of the eyes, 
+            and our data perception, as well. How your eye responds to the amount of light in the environment is the key to understanding how to build effective dark-themed interfaces</span> .</P>
 
     </div>
 
@@ -82,6 +94,9 @@
 
             const containerElement = document.getElementById('container');
             containerElement.className = "container-dark";
+            
+            const HeadElement = document.getElementById('title');
+            HeadElement.className = "title1";
         }
         function light() {
             const imgDark = document.getElementById('dark');
@@ -95,6 +110,10 @@
 
             const containerElement = document.getElementById('container');
             containerElement.className = "container-light";
+
+             
+            const HeadElement = document.getElementById('title');
+            HeadElement.className = "title";
         }
     </script>
 </body>
